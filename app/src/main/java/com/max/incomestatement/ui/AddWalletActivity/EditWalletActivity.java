@@ -37,8 +37,10 @@ public class EditWalletActivity extends AppCompatActivity {
         name =  findViewById(R.id.nameIn);
         balance= findViewById(R.id.balanceIn);
         Button deleteButtom = findViewById(R.id.delete_wallet);
-        AddWalletActivityFactory factory = InJectorUtils.provideAddActivityViewModelFactory(this.getApplicationContext());
-        mViewModel = ViewModelProviders.of(this,factory).get(AddWalletActivityViewModel.class);
+        AddWalletActivityFactory factory = InJectorUtils
+                .provideAddActivityViewModelFactory(this.getApplicationContext());
+        mViewModel = ViewModelProviders.of(this,factory)
+                .get(AddWalletActivityViewModel.class);
 
         setSpinner();
         if(mode == 1)
