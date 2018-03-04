@@ -1,13 +1,10 @@
 package com.max.incomestatement.ui.AddWalletActivity;
-
 import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.ContentValues;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,9 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-
 import com.max.incomestatement.R;
-
 import com.max.incomestatement.model.Wallet;
 import com.max.incomestatement.ui.MainActivity.MainActivityViewModelFactory;
 import com.max.incomestatement.util.InJectorUtils;
@@ -38,15 +33,15 @@ public class EditWalletActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_wallet);
-        spinner = (Spinner)findViewById(R.id.spinner);
-        name = (EditText) findViewById(R.id.nameIn);
-        balance= (EditText)findViewById(R.id.balanceIn);
+        spinner = findViewById(R.id.spinner);
+        name =  findViewById(R.id.nameIn);
+        balance= findViewById(R.id.balanceIn);
         Button deleteButtom = findViewById(R.id.delete_wallet);
         AddWalletActivityFactory factory = InJectorUtils.provideAddActivityViewModelFactory(this.getApplicationContext());
         mViewModel = ViewModelProviders.of(this,factory).get(AddWalletActivityViewModel.class);
 
         setSpinner();
-        if(mode==1)
+        if(mode == 1)
         {
             deleteButtom.setVisibility(View.GONE);
         }

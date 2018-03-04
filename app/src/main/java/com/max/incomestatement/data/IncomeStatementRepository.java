@@ -29,10 +29,8 @@ public class IncomeStatementRepository {
                                    AppExecutors executors) {
             mWalletDao = walletDao;
             mExecutors = executors;
-
-
-
         }
+
 
         public synchronized static IncomeStatementRepository getInstance(
                 WalletDao walletDao,  AppExecutors executors) {
@@ -59,8 +57,6 @@ public class IncomeStatementRepository {
                 });
             }
             notify();
-
-
 
         }
 }
